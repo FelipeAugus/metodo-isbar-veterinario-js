@@ -1,0 +1,10 @@
+/* https://coolors.co/262322-63372c-c97d60-ffbcb5-f2e5d7 */
+
+body{
+    background-color: #F2E5D7;
+    color: #262322;
+}
+div.container{
+    background-color: #C97D60;
+    border: solid 2px #262322;
+}

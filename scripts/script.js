@@ -50,31 +50,34 @@ function preencheRegistros(registros) {
 
 function addRegistro(nome='', infos='', situacao='', breveHistorico='', avaliacao='', recomendacao='') {
     $('#registros').append(`
-        <div class="registro">
+        <div class="container mt-2 registro">
             <div>
                 <h2 contenteditable="true" class="nome">${nome?nome:' --- Nome do animal --- '}</h2>
                 <h4>Infos do fela</h3>
+                <div class="float-end">
+                    <button class="btn dropdown-toggle" onclick="toggle(${count})"></button>
+                </div>
                 <span contenteditable="true" class="infos">${infos?infos:'----- Informações do animal -----'}</span>
+                <br><br>
             </div>
-            <button onclick="toggle(${count})">Setinha pra baixo</button>
             <!-- Quando clica no BTN essa daqui varia dentre hidden ou não -->
             <div id="SBAR-${count}" class="infos" style="display: none;"> 
                 <div>
-                    <div class="situacao">
-                        <h4>Situacao do Fela</h4>
-                        <textarea class="situacao-text" cols="50" rows="5">${situacao}</textarea>
+                    <div class="mb-2 situacao">
+                        <h4>Situação do Fela</h4>
+                        <textarea class="form-control situacao-text" cols="50" rows="5">${situacao}</textarea>
                     </div>
-                    <div class="breveHistorico">
-                        <h4>Breve Historico do Fela</h4>
-                        <textarea class="breveHistorico-text" cols="50" rows="5">${breveHistorico}</textarea>
+                    <div class="mb-2 breveHistorico">
+                        <h4>Breve Histórico do Fela</h4>
+                        <textarea class="form-control breveHistorico-text" cols="50" rows="5">${breveHistorico}</textarea>
                     </div>
-                    <div class="avaliacao">
+                    <div class="mb-2 avaliacao">
                         <h4>Breve Avaliação do Fela</h4>
-                        <textarea class="avaliacao-text" cols="50" rows="5">${avaliacao}</textarea>
+                        <textarea class="form-control avaliacao-text" cols="50" rows="5">${avaliacao}</textarea>
                     </div>
-                    <div class="recomendacao">
-                        <h4>Recomendação para o Fela</h4>
-                        <textarea class="recomendacao-text" cols="50" rows="5">${recomendacao}</textarea>
+                    <div class="mb-2 recomendacao">
+                        <h4>Recomendações para o Fela</h4>
+                        <textarea class="form-control recomendacao-text" cols="50" rows="5">${recomendacao}</textarea>
                     </div>
                 </div>
             </div>
