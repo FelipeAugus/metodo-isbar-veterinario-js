@@ -48,6 +48,11 @@ function preencheRegistros(registros) {
     });
 }
 
+function limpaRegistros() {
+    $('#registros').html(``);
+    console.log("COE")
+}
+
 function addRegistro(nome='', infos='', situacao='', breveHistorico='', avaliacao='', recomendacao='') {
     $('#registros').append(`
         <div class="container mt-2 registro">
