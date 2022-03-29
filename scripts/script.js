@@ -50,14 +50,18 @@ function preencheRegistros(registros) {
 
 function limpaRegistros() {
     $('#registros').html(``);
-    console.log("COE")
 }
 
 function addRegistro(nome='', infos='', situacao='', breveHistorico='', avaliacao='', recomendacao='') {
     $('#registros').append(`
-        <div class="container mt-2 registro">
+        <div id="registro-${count}" class="container mt-2 registro">
             <div>
+                <br>
+                <div class="float-end">
+                    <button class="btn btn-dark" onclick="delRegistro(${count})">Deletar</button>
+                </div>
                 <h2 contenteditable="true" class="nome">${nome?nome:' --- Nome do animal --- '}</h2>
+                
                 <h4>Infos do fela</h3>
                 <div class="float-end">
                     <button class="btn dropdown-toggle" onclick="toggle(${count})"></button>
@@ -89,6 +93,10 @@ function addRegistro(nome='', infos='', situacao='', breveHistorico='', avaliaca
         </div>
     `);
     count+=1;
+}
+
+function delRegistro(registro){
+    $(`#registro-${registro}`).remove();
 }
 
 function toggle(infos) {
